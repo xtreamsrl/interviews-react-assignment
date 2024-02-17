@@ -2,26 +2,25 @@
 Hi! We're happy you opened this file, not everyone does!
 To let us know you did, paste a capybara picture 
 in the How to Run section 😊 
+These will be extra points for you!
 -->
 
 # React Interview Assignment
 
 ## Introduction
 
-This is an interview exercise for the Web & Mobile team of [xtream](https://www.linkedin.com/company/xtream-srl). In the
-following sections, you will find a number of challenges that we ask you to implement. You **DO NOT NECESSARILY need to
-complete 100% of them**, but rather only the ones you feel comfortable about or that interest you.
+This is an interview exercise for the Digital Products team of [xtream](https://www.linkedin.com/company/xtream-srl). In
+the following sections, you will find a number of challenges that we ask you to implement. You **DO NOT NECESSARILY need
+to complete 100% of them**: you can choose to complete as many as you want.
 
-:watch: We estimate it should take around 8 hours to solve the challenges, and we give you **1 week** to submit a
-solution, so that you can do it at your own pace.
+:watch: We give you **1 week** to submit a solution, so that you can do it at your own pace. We are aware that you might
+have other commitments, so we are not expecting you to work on this full-time. You will be evaluated based on the
+quality of your work, not on the time you spent on it.
 
 ### Deliverables
 
 Simply fork this repository and work on it as if you were working on a real-world project assigned to you. A week from
-now, we will checkout your work and evaluate it.
-
-:heavy_exclamation_mark:**Important**: At the end of this README, you will find a "How to run" section that is not
-written out. Please, write there instructions on how to run your code.
+now, we will assess your work.
 
 ### Evaluation
 
@@ -33,63 +32,77 @@ Your work will be assessed according to several criteria. As an example, these i
 * Work quality (commits, branches, workflow, tests, ...)
 * Provided Documentation
 
+#### A Friendly Reminder:
+
+We’re all about embracing the latest in AI, including GPT and similar technologies. They’re great tools that can provide
+a helping hand, whether it’s for generating ideas, debugging, or refining solutions. However, for this coding challenge,
+we’re really keen to see your personal touch. We're interested in your thought process, decision-making, and the
+solutions you come up with.
+
+Remember, while using AI tools can be incredibly helpful, the essence of this task is to showcase your skills and
+creativity. Plus, be prepared to dive into the details of your code during the technical interview. Understanding the '
+why' and 'how' behind your decisions is crucial, as it reflects your ability to critically engage with the technology
+you're using.
+
+So, feel free to lean on AI for support, but ensure your work remains distinctly yours. We're looking for a blend of
+technical savvy and individual flair. Dive in, get creative, and let’s see what you can create. Excited to see your
+work. Happy coding! 🚀💼👩‍💻
+
 ### Let's get started
 
-We designed a specific section for the React interview: the JSNOPlaceholder UI. We will identify a number of challenges
-to complete.
+We do understand that some topics might be unfamiliar for you. Therefore, pick any number of challenges and try to
+complete them.
 
 :heavy_exclamation_mark:**Important**: you might feel like the tasks are somehow too broad, or the requirements are not
-fully elicited. **This is done on purpose**: we want to give you freedom to take your own choices and to put as fewer
-constraints as possible on your work.
+fully elicited. **This is done on purpose**: we want to give you the freedom to make your own choices and to put as
+fewer constraints as possible on your work. We appreciate if you could record any decisions, assumptions and doubts,
+together with any questions that you will ask in a real-world scenario. If you want to choose our stack instead, we
+generally work with TypeScript and NestJS.
 
 ---   
 
-### JSNOPlaceholder UI
+### Problem Domain
 
-It seems like a hurricane dropped some code in the repo. It added the core functionalities, so you will not get bored on
-calling some apis and create the basic user interface. The app has a classical layout with a drawer. It communicates
-with [jsonplaceholder](https://jsonplaceholder.typicode.com/)
-to show Posts, Users and ToDos.
+Your task is to build the web application for **FreshCart Market**, a simple grocery e-commerce website, where you can
+search for products, add to a cart, pay for the products and organize the delivery. The client does not want SEO or
+other similar features, so it is ok to have a single page application.
 
-#### Challenge #1.1
+For the sake of this assignment, let's focus on creating the **customer** part instead of the **admin** part (which
+handles all the products and their available quantities)
 
-It would be great if you can refactor the code to make it more maintainable and to reuse it as much as possible.
-Consider that this is just a POC (Proof Of Concept), and the codebase will expand a lot if the client will accept the
-work done in this phase.
+Do not consider authentication, sign in or multiple users: for simplicity, imagine the user that is interacting with the
+system is always the same.
 
-#### Challenge #1.2
+#### Challenge #1: Available Products
 
-Looking at the app, the first thing that your manager did was typing something in the searchbar. Not surprisingly, it
-does nothing. The junior developer that wrote the app wasn't able to do it.
+A junior developer started the project and created the list of the products available in the store. The products are
+paginated server side but the junior wasn't able to implement the pagination on the frontend. Comment and refactor the
+code so that it is more maintainable and reusable while implementing the pagination with infinite scroll.
 
-And yes! Obviously it is a core functionality for the final client decision. You should make it work. Writing into the
-searchbar should affect the results shown on the page, without any button click.
+#### Challenge #2: Categories and Search
 
-It's time to show who is junior and who is not.
+There is also a search bar and a list of categories. The user can search for products and filter them by category. The
+search will happen when the user types in the search bar and the results will be updated.
 
-#### Challenge #1.3
+#### Challenge #3: Add to cart
 
-Great job! The client review went pretty good! He showed interest in the SPA solution that we adopted, so he asked
-for a technical assessment to his tech-savvy IT department. It came out that they are a little worried on how the initial
-loading time could change when the codebase expands or more functionalities are added. They are really happy about the
-reactivity of page changes and navigation that a SPA guarantees, so they do not want any compromise on this. While you
-are trying to solve this issue, keep in mind that the navigation speed between different pages should not be affected.
+On each product there is a button to add it to the cart. The cart is a simple list of products with their quantity and
+is handled on the backend. The user can add or remove products from the cart. And the number of products in the cart is
+updated in the header and also in the product list. The list is a bit slow to update and the junior developer wasn't
+able to fix it. If you end up succeeding on solving this issue, it would be great to provide some proof of the
+performance improvements. The add to cart functionality has also a bad user experience because of the slow backend, it
+would be great if we can do something on it also.
 
-Can we then make sure that the application would still be quick and responsive even though it grows and gets more and
-more functionalities?
+#### Challenge #4: Checkout phase
 
-#### Challenge #1.4
+The last part to implement is the checkout phase, where the user can pay for the products and organize the delivery. The
+checkout is a multistep form with these steps:
 
-You made it! Now that the deal is basically closed, it's time to shine. While you were in the demo meeting, you hear
-from two technical client's guys that their infrastructure has an isolated environment for dev, test, and production.
-Praise the Lord. Let's quickly make easy to change all the environment-specific stuffs (like switching endpoints). It
-would be also great to have the app version shown in the toolbar!
+* recap of the cart and final price
+* the address where the products should be delivered and the slot selection
+* the payment method
+* the confirmation of the order
 
-#### Challenge #1.5
+## How to run
 
-Never trust junior's code right? This is the case. The client's IT manager just spotted something wrong about the ToDos
-page rendering performances. And guess what? It happened in the same day of the client's sign. You should have a look there and fix
-the problem as soon as you can, or the entire project could be lost.
-
-If you end up succeeding on solving this issue, it's better to provide some proof of the performance improvements so
-that we can show it to the client.
+...
