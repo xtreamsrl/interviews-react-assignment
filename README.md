@@ -56,15 +56,14 @@ complete them.
 :heavy_exclamation_mark:**Important**: you might feel like the tasks are somehow too broad, or the requirements are not
 fully elicited. **This is done on purpose**: we want to give you the freedom to make your own choices and to put as
 fewer constraints as possible on your work. We appreciate if you could record any decisions, assumptions and doubts,
-together with any questions that you will ask in a real-world scenario. If you want to choose our stack instead, we
-generally work with TypeScript and NestJS.
+together with any questions that you will ask in a real-world scenario.
 
 ---   
 
 ### Problem Domain
 
 Your task is to build the web application for **FreshCart Market**, a simple grocery e-commerce website, where you can
-search for products, add to a cart, pay for the products and organize the delivery. The client does not want SEO or
+search for products, add to cart, pay for the products and organize the delivery. The client does not want SEO or
 other similar features, so it is ok to have a single page application.
 
 For the sake of this assignment, let's focus on creating the **customer** part instead of the **admin** part (which
@@ -91,7 +90,7 @@ is handled on the backend. The user can add or remove products from the cart. An
 updated in the header and also in the product list. The list is a bit slow to update and the junior developer wasn't
 able to fix it. If you end up succeeding on solving this issue, it would be great to provide some proof of the
 performance improvements. The add to cart functionality has also a bad user experience because of the slow backend, it
-would be great if we can do something on it also.
+would be great if we can do something on it on frontend Side to make it smother.
 
 #### Challenge #4: Checkout phase
 
@@ -99,10 +98,10 @@ The last part to implement is the checkout phase, where the user can pay for the
 checkout is a multistep form with these steps:
 
 * recap of the cart and final price
-* the address where the products should be delivered and the slot selection
+* the address where the products should be delivered and the delivery slot selection
 * the payment method
 * the confirmation of the order
 
-## How to run
+## Documentation
 
 ...
